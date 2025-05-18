@@ -76,12 +76,12 @@ void main() async {
               if (kDebugMode) {
                 final proxy = Environment().proxy;
                 debugPrint('debug proxy: $proxy');
-                // if (proxy.isNotEmpty) {
-                HttpOverrides.global = MyHttpOverrides(
-                  proxy: "192.168.1.192:9090",
-                );
-                // HttpOverrides.global = MyHttpOverrides(proxy: proxy);
-                // }
+                if (proxy.isNotEmpty) {
+                // HttpOverrides.global = MyHttpOverrides(
+                //   proxy: "192.168.1.192:9090",
+                // );
+                HttpOverrides.global = MyHttpOverrides(proxy: proxy);
+                }
               }
               // final socketService = SocketService();
               // await socketService.initSocket();
