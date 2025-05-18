@@ -1,0 +1,15 @@
+# brew install protobuf
+# mkdir -p lib/src/generated
+# protoc --dart_out=lib/generated protos/ws.proto
+
+targets:
+  $default:
+    sources:
+
+      - preview_play
+      - lib/$lib$
+      - proto/**
+    builders:
+      protobuf_generator:
+        options:
+          dart_out_dir: "lib/src/generated"

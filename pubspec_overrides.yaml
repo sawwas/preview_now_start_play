@@ -1,0 +1,9 @@
+# melos_managed_dependency_overrides: flutter_util_code,preview_play_ui,scrollable_positioned_list,intl
+dependency_overrides:
+  flutter_util_code:
+    path: packages/flutter_util_code
+  preview_play_ui:
+    path: packages/preview_play_ui
+  scrollable_positioned_list:
+    path: packages/scrollable_positioned_list
+  intl: 0.19.0

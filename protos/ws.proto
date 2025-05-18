@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package ws;
+
+option go_package = "gitlab.srenewbw.com/server-api/protobuf/ws";
+
+enum PackageKind {
+    NONE = 0;
+    NEW_INSITE_NOTICE = 1; // 新的站内通知
+}
+
+message Package {
+    PackageKind kind = 1;
+    bytes data = 2;
+}
+
+
+// NEW_INSITE_NOTICE
+message PushNewInsiteNotice {
+    int64 timestamp = 1; // ms
+}

@@ -1,0 +1,74 @@
+name: preview_play
+
+packages:
+  - .
+  - packages/*
+
+scripts:
+  # --------- 测试环境打包 ------------ #
+  build-apk-dev:
+    exec: flutter build apk --flavor dev --dart-define-from-file=env/dev.json
+    packageFilters:
+      scope: preview_play
+
+  build-ipa-dev:
+    exec: flutter build ipa --flavor dev --export-options-plist=ios/ExportOptionsDevelopment.plist --dart-define-from-file=env/dev.json
+    packageFilters:
+      scope: preview_play
+
+  build-ipa-adhoc:
+    exec: flutter build ipa --flavor dev --export-options-plist=ios/ExportOptionsAdhoc.plist --dart-define-from-file=env/prod.json
+    packageFilters:
+      scope: preview_play
+
+  # tf的测试包
+  build-ipa-dev-tf:
+    exec: flutter build ipa --flavor dev --export-options-plist=ios/ExportOptions.plist --dart-define-from-file=env/dev.json
+    packageFilters:
+      scope: preview_play
+
+  # --------- 生产环境打包 ------------ #
+  build-ipa:
+    exec: flutter build ipa --flavor prod --export-options-plist=ios/ExportOptions.plist --dart-define-from-file=env/prod.json
+    packageFilters:
+      scope: preview_play
+
+  build-apk:
+    exec: flutter build apk --flavor prod --dart-define-from-file=env/prod.json
+    packageFilters:
+      scope: preview_play
+
+  build-appbundle:
+    exec: flutter build appbundle --flavor prod --dart-define-from-file=env/prod.json
+    packageFilters:
+      scope: preview_play
+
+  # --------- 上传到 Firebase ------------ # 
+#  distribute_android_firebase:
+#    description: Distribute the Android APK to Firebase App Distribution.
+#    run: |
+#      export GOOGLE_APPLICATION_CREDENTIALS="/private_keys/tomo-9c721-8b198b85e1e7.json"
+#      firebase appdistribution:distribute ${FIREBASE_OUTPUT_PATH:-./build/app/outputs/flutter-apk/app-dev-release.apk} \
+#        --app "1:479465761311:android:d44b1eb4de43fa87f0432a" \
+#        --groups "tomo-dev" \
+#        --release-notes "$PLATFORM_NAME:$RELEASE_NOTES"
+#  distribute_ios_firebase:
+#    description: Distribute the ios to Firebase App Distribution.
+#    run: |
+#      export GOOGLE_APPLICATION_CREDENTIALS="/private_keys/tomo-9c721-8b198b85e1e7.json"
+#      firebase appdistribution:distribute ${FIREBASE_OUTPUT_PATH:-./build/ios/ipa/Tomo.ipa} \
+#        --app "1:479465761311:ios:6ab56d6e5d1402cbf0432a" \
+#        --groups "tomo-dev" \
+#        --release-notes "$PLATFORM_NAME:$RELEASE_NOTES"
+
+  # --------- 通知飞书(Lark) ------------ #
+#  notify_lark:
+#    run: |
+#      curl -X POST -H "Content-Type: application/json" \
+#      -d '{
+#        "msg_type": "text",
+#        "content": {
+#          "text": "'"$LARK_MESSAGE"'"
+#        }
+#      }' \
+#      https://open.larksuite.com/open-apis/bot/v2/hook/51e622ba-2be2-4705-b5da-19fd183a5d5b

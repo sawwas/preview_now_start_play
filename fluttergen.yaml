@@ -1,0 +1,6 @@
+flutter:
+  assets:
+    - assets/svg/
+  integrations:
+    flutter_svg: true
+

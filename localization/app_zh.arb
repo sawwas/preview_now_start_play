@@ -1,0 +1,29 @@
+{
+  "appName": "app名称",
+  "serviceError": "服务连接失败",
+  "email": "邮箱",
+  "password": "密码",
+  "dont_have_an_account": "没有帐户？",
+  "click_here_to_register": "单击此处注册",
+  "recentConversation": "最近的",
+  "messages": "消息",
+  "userName": "用户昵称",
+  "alreadyHaveAnAccount": "已经有一个帐户",
+  "clickHereToLogin": "单击此处登录",
+  "register": "注册",
+  "login": "登录",
+  "contacts": "联系薄",
+  "addContact": "添加联系人",
+  "enterContactEmail": "输入联系人邮箱",
+  "cancel": "取消",
+  "add": "添加",
+  "api_400": "服务：参数错误",
+  "api_408": "服务：请求超时",
+  "api_429": "服务：请求频繁",
+  "api_500": "服务：内部错误"
+
+
+
+
+
+}

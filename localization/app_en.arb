@@ -1,0 +1,26 @@
+{
+  "appName": "appName",
+  "serviceError": "Service connection failed",
+  "email": "Email",
+  "password": "Password",
+  "dont_have_an_account": "Don't have an account?",
+  "click_here_to_register": "Click here to register",
+  "recentConversation": "Recent",
+  "messages": "Messages",
+  "userName": "Username",
+  "alreadyHaveAnAccount": "Already have an account",
+  "clickHereToLogin": "Click here to login",
+  "register": "Register",
+  "login": "Login",
+  "contacts": "Contact",
+  "addContact": "Add contact",
+  "enterContactEmail": "Enter contact email",
+  "cancel": "Cancel",
+  "add": "Add",
+  "api_400": "Service: Error parameters",
+  "api_408": "Service: Request timeout",
+  "api_429": "Service: Requests frequently",
+  "api_500": "Service: Internal server error"
+
+
+}
